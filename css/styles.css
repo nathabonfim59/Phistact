@@ -58,3 +58,72 @@
     margin-top: 15px;
 }
 
+.contact {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Para evitar bordas duplicadas, foi definida apenas a superior */
+.contact-row {
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;;
+    /* background-color: rgb(46, 197, 139); */
+    border: solid #9C528B 2px;
+}
+
+/* Cantos arredondados nas bordas superiores */
+.contact-row:first-child {
+    background-color: #9C528B;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+/* Cantos arredondados nas bordas inferiores */
+.contact-row:last-child {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Aplica a borda a ultima linha  */
+.contact-row:not(:last-child) {
+    border-bottom-width: 0;
+}
+
+.contact-row div {
+    color: #9C528B;
+    border-right: solid #9C528B 2px;
+    font-size: 30px;
+    padding-top: 8px;
+    width: 50px;
+}
+
+.contact-row p {
+    padding-left: 20px;
+    font-size: 22px;
+    margin-top: 12px;
+    color: #515151;
+    
+}
+
+.contact-header div {
+    background-color: rgb(196, 106, 176);
+}
+
+.contact-header p {
+    color: #fff;
+}
+
+.contact-index {
+    color: #fff;
+    padding-left: 16px;
+}
+
+.fa-envelope {
+    padding-left: 9px;
+}
+
+.fa-phone {
+    padding-left: 13px;
+}
