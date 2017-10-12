@@ -31,3 +31,30 @@
     margin-right: 10px;
     text-align: justify;
 }
+
+.button {
+    color: #676A95;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.button:hover{
+    background-color: rgb(124, 68, 112) !important;
+    color: rgb(231, 231, 231) !important;
+}
+
+.button-active {
+    background-color: #9C528B;    
+    color: #fff;
+}
+
+.button-icon {
+    font-size: 70px;
+    margin-top: 15px;
+}
+
