@@ -1,0 +1,33 @@
+* {
+    font-family: "Roboto", 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+/* Barra fixa no topo */
+.navbar {
+    background-color: #1D1E2C;
+    height: 70px;
+    color: #BB4BA1;
+    position: fixed;
+    top: 0;
+}
+
+.navbar-brand {
+    padding-left: 16px;
+    margin-top: 16px;
+}
+
+.sidebar {
+    background-color: #2A2B3E;
+    position: fixed;
+    left: 0;
+    top: 70px;
+    height: 100%;
+    width: 160px;
+}
+
+.content {
+    margin-top: 80px;
+    margin-left: 170px;
+    margin-right: 10px;
+    text-align: justify;
+}
