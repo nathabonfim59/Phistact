@@ -12,3 +12,8 @@ function activate_button(id) {
         document.getElementById('add-users').style.color = '#676A95';
     }
 }
+
+function toggle_contact(contact) {
+    contact.classList.toggle('contact-collapsed');
+    contact.classList.toggle('contact-expanded');    
+}
