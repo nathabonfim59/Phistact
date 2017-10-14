@@ -9,11 +9,18 @@
                 $page = 'add_contacts.php';
                 break;
             default:
-                $page = 'list_contacts.php';
+                redirect_to_page('list');
                 break;
         }
     } else {
-        $page = 'list_contacts.php';
+        redirect_to_page('list');        
+    }
+
+    function redirect_to_page($page) {
+        $current_url = (((isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]?page=list"));
+        $target_url = explode('?', $current_url_raw)[0].'?page='.$page;
+        header('Location: '.$target_url, true, 301);
+        die();
     }
 ?>
 <!DOCTYPE html>
@@ -32,6 +39,10 @@
 <body>
     <?php include('bars.php'); ?>
     <div class="content">
+        <?php 
+        
+        ?>
+        
         <?php include($page) ?>
     </div>
     <script src="js/scripts.js"></script>
