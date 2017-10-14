@@ -16,8 +16,17 @@
         redirect_to_page('list');        
     }
 
+    /**
+     * Redireciona o usuário para uma página válida especificada
+     *
+     * @param [string] $page
+     * Parâmetros válidos
+     * $page = 'list' ou $page = 'add'
+     * 
+     * @return void
+     */
     function redirect_to_page($page) {
-        $current_url = (((isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]?page=list"));
+        $current_url = (((isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"));
         $target_url = explode('?', $current_url_raw)[0].'?page='.$page;
         header('Location: '.$target_url, true, 301);
         die();
@@ -39,9 +48,6 @@
 <body>
     <?php include('bars.php'); ?>
     <div class="content">
-        <?php 
-        
-        ?>
         
         <?php include($page) ?>
     </div>
