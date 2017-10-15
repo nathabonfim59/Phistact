@@ -1,4 +1,15 @@
 <?php
+    // Trata as requisições do formulário
+    if(isset($_GET['nome'])) {
+        $contact = array(
+            'name' => $_GET['nome'],
+            'email' => $_GET['email'],
+            'phone' => $_GET['phone']
+        );
+
+        store_contacts($contact);
+    }
+
     // Redireciona o usuário para a página adequada de acordo com a URL
     if(isset($_REQUEST['page'])) {
         switch($_REQUEST['page']) {
@@ -31,6 +42,22 @@
         header('Location: '.$target_url, true, 301);
         die();
     }
+
+    /**
+     * Armazena o contato em um cookie
+     *
+     * @param [type] $contact
+     * @return void
+     */
+    function store_contacts($contact) {
+        $contact_list = array();
+        if (isset($_COOKIE['contact_list'])) {
+            $contact_list = json_decode($_COOKIE['contact_list']);
+        }
+
+        array_push($contact_list, $contact);
+        setcookie('contact_list', json_encode($contact_list));
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,7 +75,6 @@
 <body>
     <?php include('bars.php'); ?>
     <div class="content">
-        
         <?php include($page) ?>
     </div>
     <script src="js/scripts.js"></script>

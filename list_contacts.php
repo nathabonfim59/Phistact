@@ -32,4 +32,7 @@
             ';
         }
     }
+
+    $contact_list = json_decode($_COOKIE['contact_list'], true);
+    display_contacts($contact_list);
 ?>
