@@ -37,6 +37,6 @@
         $contact_list = json_decode($_COOKIE['contact_list'], true);
         display_contacts($contact_list);
     } else {
-        echo '<h1 style="text-align: center;padding-top: 30px;">Ainda não há nenhum contato salvo.<br><br>Adicione um clicando no botão <strong>Adicionar contato</strong> a esquerda.</h1>';
+        echo '<h1 style="text-align: center;padding-top: 30px;">Ainda não há nenhum contato salvo.<br><br>Adicione um clicando no botão "Adicionar contato" a esquerda.</h1>';
     }
 ?>
