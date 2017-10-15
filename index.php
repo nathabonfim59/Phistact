@@ -56,7 +56,7 @@
         }
 
         array_push($contact_list, $contact);
-        setcookie('contact_list', json_encode($contact_list));
+        setcookie('contact_list', json_encode($contact_list), strtotime('+1 year'));
     }
 ?>
 <!DOCTYPE html>
